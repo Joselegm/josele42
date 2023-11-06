@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jose-lui <jose-lui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 16:48:15 by jose-lui          #+#    #+#             */
-/*   Updated: 2023/11/02 16:15:08 by jose-lui         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:26:49 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 # include <ctype.h>
 # include <string.h>
 # include <strings.h>
-# include "stdlib.h"
+# include <stdlib.h>
+# include "libft.h"
 
 typedef struct	s_list
 {

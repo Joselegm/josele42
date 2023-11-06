@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jose-lui <jose-lui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 16:39:17 by jose-lui          #+#    #+#             */
-/*   Updated: 2023/10/24 13:41:14 by jose-lui         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:56:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ char	*ft_strchr(const char *s, int c)
 		return (ptr);
 	return (NULL);
 }
-/*int main()
+int main()
 {
 	int c;
 	c = 'a';
 	printf("%s\n", ft_strchr("hola", -279));
 	printf("%s\n", strchr("hola", -279));
 			return(0);
-}*/
+}
