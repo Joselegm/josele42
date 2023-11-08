@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 18:22:13 by jose-lui          #+#    #+#             */
-/*   Updated: 2023/11/06 20:31:22 by marvin           ###   ########.fr       */
+/*   Updated: 2023/11/07 20:08:49 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,28 +70,28 @@ char	**ft_split(const char *s, char c)
 	char	**p;
 	int		cw;
 
-	from = 0;
 	to = 0;
+	cw = 0;
 	if (!s || *s == '\0')
 		return (NULL);
 	p = (char **)malloc(sizeof(char *) * (get_nbr_words(s, c) + 1));
 	if (p == NULL)
 		return (NULL);
-	cw = 0;
-	while (s[to])
+	while (cw < get_nbr_words(s, c) &&s[to] != '\0')
 	{
-		while (s[to] != '\0' && s[to] == c)
+		while (s[to] == c)
 				to++;
 		from = to;
 		while (s[to] != '\0' && s[to] != c)
 				to++;
-		//printf("from: %i, to: %i\n", from, to);
+		// se que tengo que poner algo aquí del tipo if (to ==c) pero no doy con qué
+		printf("from: %i, to: %i\n", from, to);
 		p[cw] = strdup_cpy(&s[from], to - from);
 		if (p[cw++] == NULL)
 			return (ft_free_mem(p), NULL);
-		if (s[to] == '\0')
-			return (p);
-		to++;
+		//if (s[to] == '\0')
+		//	return (p);
+		//to++;
 	}
 	p[cw] = NULL;
 	return (p);
@@ -107,17 +107,15 @@ char	**ft_split(const char *s, char c)
 
 int	main() 
 {
-     char	*texto = "      lorem   //  //   ";
-     char	delimitador = ' ';
+     char	*texto = "---lorem----";
+     char	delimitador = '-';
 
  	printf("%i\n", get_nbr_words(texto, delimitador));
- // 	return(0);
-// // }
+  	//return(0);
+ //}
 
-    char	**token = ft_split(texto, delimitador);
+   char	**token = ft_split(texto, delimitador);
  	int		i;
-
- 	//printf("len: %zu\n", ft_strlen(texto));
 
  	i = 0;
  	if (token)

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 12:18:57 by jose-lui          #+#    #+#             */
-/*   Updated: 2023/10/27 13:21:54 by marvin           ###   ########.fr       */
+/*   Updated: 2023/11/08 12:15:23 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void	ft_bzero(void *s, size_t n)
 	char s[] = "hello world";
 	char y[] = "hello world";
 	ft_bzero(s, n);
-	printf("%c\n",s[6]);
+	printf("%c\n",s[2]);
 	bzero(y, n);
-	printf("%c\n", y[6]);
+	printf("%c\n", y[4]);
 	return(0);
 }*/
 
