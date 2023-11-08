@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jose-lui <jose-lui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 18:22:13 by jose-lui          #+#    #+#             */
-/*   Updated: 2023/11/07 20:08:49 by marvin           ###   ########.fr       */
+/*   Updated: 2023/11/08 17:16:18 by jose-lui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,22 @@ static int	get_nbr_words(const char *s, char a)
 	words = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == a)
+		while (s[i] == a)
 			i++;
 		if (s[i] == '\0')
 			return (words);
-		if ((s[i] != a && s[i + 1] == a) ||s[i + 1] == '\0')
+		if ((s[i] != a && s[i + 1] == a) || s[i + 1] == '\0')
 			words++;
 		i++;
 	}
 	return (words);
 }
 
-static char *strdup_cpy(const char *str, size_t c)
+static char	*strdup_cpy(const char *str, size_t c)
 {
-	char *p;
-	size_t i;
-	
+	char	*p;
+	size_t	i;
+
 	i = 0;
 	p = (char *)malloc(sizeof(char) * (c + 1));
 	if (p == NULL)
@@ -72,32 +72,25 @@ char	**ft_split(const char *s, char c)
 
 	to = 0;
 	cw = 0;
-	if (!s || *s == '\0')
-		return (NULL);
 	p = (char **)malloc(sizeof(char *) * (get_nbr_words(s, c) + 1));
 	if (p == NULL)
 		return (NULL);
-	while (cw < get_nbr_words(s, c) &&s[to] != '\0')
+	while (cw < get_nbr_words (s, c) && s[to] != '\0')
 	{
 		while (s[to] == c)
 				to++;
 		from = to;
 		while (s[to] != '\0' && s[to] != c)
 				to++;
-		// se que tengo que poner algo aquí del tipo if (to ==c) pero no doy con qué
-		printf("from: %i, to: %i\n", from, to);
-		p[cw] = strdup_cpy(&s[from], to - from);
+			p[cw] = strdup_cpy(&s[from], to - from);
 		if (p[cw++] == NULL)
 			return (ft_free_mem(p), NULL);
-		//if (s[to] == '\0')
-		//	return (p);
-		//to++;
 	}
 	p[cw] = NULL;
 	return (p);
 }
 
- /*int main ()
+/*int main ()
  {
  	const char *d = "/   /   split    /   this/ for   me  !    /   / ";
  	char a = '/';
@@ -105,10 +98,10 @@ char	**ft_split(const char *s, char c)
  	return(0);
  }*/
 
-int	main() 
+/*int	main() 
 {
-     char	*texto = "---lorem----";
-     char	delimitador = '-';
+     char	*texto = "";
+     char	delimitador = 'z';
 
  	printf("%i\n", get_nbr_words(texto, delimitador));
   	//return(0);
@@ -127,4 +120,4 @@ int	main()
  		}
  	}
  	return (0);
- }
+ }*/

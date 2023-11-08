@@ -6,7 +6,7 @@
 /*   By: jose-lui <jose-lui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:21:07 by jose-lui          #+#    #+#             */
-/*   Updated: 2023/11/02 17:45:00 by jose-lui         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:41:41 by jose-lui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		p = (char *)malloc(sizeof(char) * (1));
 		p[0] = '\0';
-		return p;
+		return (p);
 	}
 	p = (char *)malloc(sizeof(char) * (r - i + 2));
 	if (p == NULL)
@@ -38,7 +38,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy (p, (char *)&s1[i], r - i + 2);
 	return (p);
 }
-
 
 // int main()
 // {
